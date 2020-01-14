@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\RenderEngine\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\IOEngine\DisplayManager\GDisplayManager\GDisplayManager.cpp" />
+    <ClCompile Include="src\IOEngine\DisplayManager\glad.c" />
+    <ClCompile Include="src\MainLoop\Main.cpp" />
+    <ClCompile Include="src\RenderEngine\RenderManager\GRenderManager\GRenderManager.cpp" />
+    <ClCompile Include="src\IOEngine\Loaders\FileLoader\FileOpener.cpp" />
+    <ClCompile Include="src\IOEngine\Loaders\ShaderLoader\ShaderLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\RenderEngine\Renderer\Renderer.h" />
+    <ClInclude Include="src\IOEngine\DisplayManager\GDisplayManager\GDisplayManager.h" />
+    <ClInclude Include="src\MainLoop\Interfaces\IRenderManager.h" />
+    <ClInclude Include="src\MainLoop\Interfaces\IDisplayManager.h" />
+    <ClInclude Include="src\MainLoop\Interfaces\ILogicManager.h" />
+    <ClInclude Include="src\MainLoop\Interfaces\IDataManager.h" />
+    <ClInclude Include="src\MainLoop\Interfaces\IPhysicsManager.h" />
+    <ClInclude Include="src\MainLoop\Interfaces\IAIManager.h" />
+    <ClInclude Include="src\RenderEngine\RenderManager\GRenderManager\GRenderManager.h" />
+    <ClInclude Include="src\RenderEngine\Interfaces\IShaderLoader.h" />
+    <ClInclude Include="src\IOEngine\Loaders\ShaderLoader\ShaderLoader.h" />
+    <ClInclude Include="src\IOEngine\Loaders\FileLoader\FileOpener.h" />
+  </ItemGroup>
+</Project>

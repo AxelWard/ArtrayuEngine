@@ -1,0 +1,14 @@
+﻿  Main.cpp
+C:\GameEngine\GameEngine\MainEngine\src\DisplayManager\DisplayManager.h(16): warning C4150: deletion of pointer to incomplete type 'GLFWwindow'; no destructor called
+  C:\GameEngine\GameEngine\lib\glfw\include\GLFW\glfw3.h(1153): note: see declaration of 'GLFWwindow'
+Main.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function "public: void __thiscall DisplayManager::initDisplay(void)" (?initDisplay@DisplayManager@@QAEXXZ)
+Main.obj : error LNK2019: unresolved external symbol _glfwTerminate referenced in function "public: void __thiscall DisplayManager::closeDisplay(void)" (?closeDisplay@DisplayManager@@QAEXXZ)
+Main.obj : error LNK2019: unresolved external symbol _glfwCreateWindow referenced in function "public: void __thiscall DisplayManager::initDisplay(void)" (?initDisplay@DisplayManager@@QAEXXZ)
+Main.obj : error LNK2019: unresolved external symbol _glfwWindowShouldClose referenced in function _main
+Main.obj : error LNK2019: unresolved external symbol _glfwPollEvents referenced in function "public: void __thiscall DisplayManager::updateDisplay(void)" (?updateDisplay@DisplayManager@@QAEXXZ)
+Main.obj : error LNK2019: unresolved external symbol _glfwMakeContextCurrent referenced in function "public: void __thiscall DisplayManager::initDisplay(void)" (?initDisplay@DisplayManager@@QAEXXZ)
+Main.obj : error LNK2019: unresolved external symbol _glfwSwapBuffers referenced in function "public: void __thiscall DisplayManager::updateDisplay(void)" (?updateDisplay@DisplayManager@@QAEXXZ)
+Main.obj : error LNK2019: unresolved external symbol _glfwGetProcAddress referenced in function "public: void __thiscall DisplayManager::initDisplay(void)" (?initDisplay@DisplayManager@@QAEXXZ)
+C:\GameEngine\GameEngine\lib\glfw\lib-vc2019\glfw3.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\GameEngine\GameEngine\lib\glfw\lib-vc2019\glfw3dll.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\GameEngine\GameEngine\Debug\MainEngine.exe : fatal error LNK1120: 8 unresolved externals
