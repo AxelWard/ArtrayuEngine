@@ -7,12 +7,10 @@ GLuint ShaderLoader::loadShader(const char* vertPath, const char* fragPath) {
 
 	GLuint program, vertexShader, fragmentShader;
 
-	const char* vertexBuffer = "";
-	const char* fragmentBuffer = "";
 
 	FileOpener f;
-	f.loadFile(vertPath, vertexBuffer);
-	f.loadFile(fragPath, fragmentBuffer);
+	const char* vertexBuffer = f.loadFile(vertPath);
+	const char* fragmentBuffer = f.loadFile(fragPath);
 
 	const GLchar* vertSource = vertexBuffer;
 	const GLchar* fragSource = fragmentBuffer;

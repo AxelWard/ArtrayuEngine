@@ -2,6 +2,8 @@
 #ifndef __FILEOPENER__
 #define __FILEOPENER__
 
+#include <fstream>
+
 class FileOpener {
 public:
 	FileOpener() {
@@ -12,7 +14,7 @@ public:
 
 	}
 
-	void loadFile(const char* filePath, const char* out);
+	const char* loadFile(const char* filePath);
 };
 
 #endif // !__FILEOPENER__

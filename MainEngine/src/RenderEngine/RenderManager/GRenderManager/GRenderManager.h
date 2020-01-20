@@ -1,11 +1,14 @@
 #ifndef __GRENDERMANAGER__
 #define __GRENDERMANAGER__
 
-#include "../../../MainLoop/Interfaces/IRenderManager.h"
+#include "../../../LogicEngine/Interfaces/IRenderManager.h"
+
+#include "../../../IOEngine/Loaders/ShaderLoader/ShaderLoader.h"
 
 #include <vector>
 
 #include "../../Renderer/Renderer.h"
+#include "../../Renderer/BaseRenderer/BaseRenderer.h"
 
 class GRenderManager : public IRenderManager {
 public:
@@ -17,12 +20,12 @@ public:
 
 	}
 
-	void prepare();
 	void render();
-	void cleanup();
+	void createBaseRenderer();
+	void shutdown();
 
 private:
-	std::vector<Renderer> renderers;
+	std::vector<Renderer*> renderers;
 };
 
 #endif

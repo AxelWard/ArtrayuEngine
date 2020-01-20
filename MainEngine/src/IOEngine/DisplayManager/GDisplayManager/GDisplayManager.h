@@ -2,7 +2,7 @@
 #ifndef __DISPLAYMANAGER__
 #define __DISPLAYMANAGER__
 
-#include "../../../MainLoop/Interfaces/IDisplayManager.h"
+#include "../../../LogicEngine/Interfaces/IDisplayManager.h"
 
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>

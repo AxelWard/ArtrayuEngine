@@ -1,26 +1,36 @@
 #include "FileOpener.h"
 
-#include <fstream>
-#include <string>
+#include <iostream>
 #include <cerrno>
+#include <string>
 
-void FileOpener::loadFile(const char* filePath, const char* out) {
-	// Open File
-	std::ifstream in(filePath, std::ios::in | std::ios::binary);
+const char* FileOpener::loadFile(const char* filePath) {
+	// Open file
+	std::ifstream in;
+	in.open(filePath, std::ios_base::in);
+
+	// Check that it opened correctly
 	if (in) {
-		// Create content container
-		std::string contents;
+		// Get length of file
+		int length;
+		in.seekg(0, in.end);    // go to the end
+		length = in.tellg();           // report location (this is the length)
+		in.seekg(0, std::ios::beg);    // go back to the beginning
 
-		// Get content from file
-		in.seekg(0, std::ios::end);
-		contents.resize(in.tellg());
-		in.seekg(0, std::ios::beg);
-		in.read(&contents[0], contents.size());
+		char c;
+		char* buffer = new char[length];    // allocate memory for a buffer of appropriate dimension
+		int iter = 0;
+		in.get(c);
+		while(!in.eof()) {
+			buffer[iter] = c;
+			in.get(c);
+			iter++;
+		}
 		in.close();
 
-		// Convert content to char* and return it
-		out = contents.c_str();
-		return;
+		buffer[iter] = '\0';
+
+		return buffer;
 	}
 	throw(errno);
 }
