@@ -6,6 +6,7 @@
 #include <glm/glm.hpp>
 
 using std::vector;
+using glm::vec4;
 using glm::vec3;
 using glm::vec2;
 
@@ -19,9 +20,9 @@ public:
 
 	}
 
-	vector<vec3> positions;
+	vector<vec4> positions;
 	vector<vec3> colors;
-	vector<vec3> normals;
+	vector<vec4> normals;
 	vector<vec2> texCoords;
 	vector<unsigned int> indices;
 };

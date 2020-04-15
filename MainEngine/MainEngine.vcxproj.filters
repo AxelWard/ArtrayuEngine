@@ -7,9 +7,11 @@
     <ClCompile Include="src\IOEngine\Loaders\FileLoader\FileOpener.cpp" />
     <ClCompile Include="src\IOEngine\Loaders\ShaderLoader\ShaderLoader.cpp" />
     <ClCompile Include="src\DataEngine\DataManager\GDataManager\GDataManager.cpp" />
-    <ClCompile Include="src\DataEngine\RDataRetriever\RDataRetriever.cpp" />
     <ClCompile Include="src\LogicEngine\Main.cpp" />
     <ClCompile Include="src\RenderEngine\Renderer\BaseRenderer\BaseRenderer.cpp" />
+    <ClCompile Include="src\DataEngine\ModelBuilders\BaseModelBuilder\BaseModelBuilder.cpp" />
+    <ClCompile Include="src\DataEngine\DataRetrievers\ModelDataRetriever\ModelDataRetriever.cpp" />
+    <ClCompile Include="src\IOEngine\InputHandlers\ResizeHandler\ResizeHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\RenderEngine\Renderer\Renderer.h" />
@@ -21,7 +23,6 @@
     <ClInclude Include="src\DataEngine\DataStructures\Model.h" />
     <ClInclude Include="src\DataEngine\DataStructures\Mesh.h" />
     <ClInclude Include="src\DataEngine\DataManager\GDataManager\GDataManager.h" />
-    <ClInclude Include="src\DataEngine\RDataRetriever\RDataRetriever.h" />
     <ClInclude Include="src\RenderEngine\Interfaces\IDataRetriever.h" />
     <ClInclude Include="src\DataEngine\DataStructures\ModelTable.h" />
     <ClInclude Include="src\LogicEngine\Interfaces\IAIManager.h" />
@@ -30,6 +31,12 @@
     <ClInclude Include="src\LogicEngine\Interfaces\IPhysicsManager.h" />
     <ClInclude Include="src\LogicEngine\Interfaces\IRenderManager.h" />
     <ClInclude Include="src\RenderEngine\Renderer\BaseRenderer\BaseRenderer.h" />
+    <ClInclude Include="src\DataEngine\ModelBuilders\BaseModelBuilder\BaseModelBuilder.h" />
+    <ClInclude Include="src\DataEngine\DataStructures\Object.h" />
+    <ClInclude Include="src\DataEngine\DataStructures\ObjectTable.h" />
+    <ClInclude Include="src\DataEngine\DataRetrievers\ModelDataRetriever\ModelDataRetriever.h" />
+    <ClInclude Include="src\RenderEngine\Camera\Camera.h" />
+    <ClInclude Include="src\IOEngine\InputHandlers\ResizeHandler\ResizeHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="rsc\baseShader\fragmentShader.glsl" />

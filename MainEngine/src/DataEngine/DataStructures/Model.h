@@ -14,7 +14,7 @@ public:
 
 	}
 
-	Mesh m;
+	Mesh mesh;
 	int renderID = -1;
 	int modelID = -1;
 };

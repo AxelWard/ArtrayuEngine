@@ -4,15 +4,16 @@
 #include "../../../LogicEngine/Interfaces/IRenderManager.h"
 
 #include "../../../IOEngine/Loaders/ShaderLoader/ShaderLoader.h"
+#include "../../../LogicEngine/Interfaces/IDataManager.h"
+#include "../../Renderer/Renderer.h"
+#include "../../Renderer/BaseRenderer/BaseRenderer.h"
+#include "../../../DataEngine/DataStructures/Model.h"
 
 #include <vector>
 
-#include "../../Renderer/Renderer.h"
-#include "../../Renderer/BaseRenderer/BaseRenderer.h"
-
 class GRenderManager : public IRenderManager {
 public:
-	GRenderManager() {
+	GRenderManager(IDataManager& d) : DatM(d) {
 		
 	}
 
@@ -21,11 +22,16 @@ public:
 	}
 
 	void render();
-	void createBaseRenderer();
+	int createBaseRenderer();
 	void shutdown();
+	void updatePerspectiveMatrices(int width, int height);
+
+	void loadData(Renderer* r);
 
 private:
 	std::vector<Renderer*> renderers;
+	IDataManager& DatM;
+	bool modelChange = false;
 };
 
 #endif

@@ -3,14 +3,13 @@
 #define __BASERENDERER__
 
 #include "../Renderer.h"
-#include <vector>
 
 using std::vector;
 
 class BaseRenderer : public Renderer {
 public:
 	BaseRenderer() {
-		
+		id = 0;
 	}
 
 	~BaseRenderer() {
@@ -23,7 +22,7 @@ public:
 	void cleanup();
 
 private:
-	vector<unsigned int> indices;
+	
 };
 
 #endif // !__BASERENDERER__

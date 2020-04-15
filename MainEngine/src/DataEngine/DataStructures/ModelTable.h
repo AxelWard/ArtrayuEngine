@@ -40,9 +40,11 @@ public:
 			}
 		}
 
-		std::cout << "Could not find a model with id: " << id << std::endl;
-		Model empty;
-		return &empty;
+		return &models[0];
+	}
+
+	int size() {
+		return models.size();
 	}
 
 private:

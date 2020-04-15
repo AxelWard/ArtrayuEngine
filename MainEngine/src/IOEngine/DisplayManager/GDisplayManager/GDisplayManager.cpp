@@ -1,12 +1,5 @@
 #include "GDisplayManager.h"
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	// make sure the viewport matches the new window dimensions; note that width and 
-	// height will be significantly larger than specified on retina displays.
-	glViewport(0, 0, width, height);
-}
-
 void GDisplayManager::initDisplay() {
 	if (!glfwInit()) {
 		std::cout << "Could not initialize GLFW!" << std::endl;
@@ -25,7 +18,9 @@ void GDisplayManager::initDisplay() {
 	}
 
 	glfwMakeContextCurrent(mainWindow);
-	glfwSetFramebufferSizeCallback(mainWindow, framebuffer_size_callback);
+
+	resizeHandle = ResizeHandler::getInstance();
+	glfwSetFramebufferSizeCallback(mainWindow, &ResizeHandler::windowResizeCallback);
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		std::cout << "Could not initialize GLAD!" << std::endl;
@@ -51,4 +46,20 @@ bool GDisplayManager::shouldDisplayClose() {
 	else {
 		return(false);
 	}
+}
+
+bool GDisplayManager::isWindowSizeUpdate() {
+	return resizeHandle.checkWindowResize();
+}
+
+int GDisplayManager::getDisplayWidth() {
+	int width = 0;
+	glfwGetWindowSize(mainWindow, &width, NULL);
+	return width;
+}
+
+int GDisplayManager::getDisplayHeight() {
+	int height = 0;
+	glfwGetWindowSize(mainWindow, NULL, &height);
+	return height;
 }

@@ -1,2 +1,4 @@
-﻿  GRenderManager.cpp
+﻿  Main.cpp
+C:\GameEngine\MainEngine\src\DataEngine\DataStructures\ModelTable.h(47,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\GameEngine\MainEngine\src\DataEngine\DataStructures\ObjectTable.h(31,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   MainEngine.vcxproj -> C:\GameEngine\x64\Debug\MainEngine.exe

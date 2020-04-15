@@ -3,6 +3,7 @@
 #define __DISPLAYMANAGER__
 
 #include "../../../LogicEngine/Interfaces/IDisplayManager.h"
+#include "../../InputHandlers/ResizeHandler/ResizeHandler.h"
 
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
@@ -10,7 +11,7 @@
 
 class GDisplayManager : public IDisplayManager {
 public:
-	GDisplayManager() {
+	GDisplayManager() : resizeHandle(ResizeHandler::getInstance()) {
 		mainWindow = NULL;
 	}
 
@@ -23,8 +24,15 @@ public:
 	void closeDisplay();
 	bool shouldDisplayClose();
 
+	bool isWindowSizeUpdate();
+	int getDisplayWidth();
+	int getDisplayHeight();
+
+
 private:
 	GLFWwindow* mainWindow;
+
+	ResizeHandler& resizeHandle;
 };
 
 #endif

@@ -14,34 +14,38 @@ int main() {
 	GDisplayManager GDisM;
 	IDisplayManager& DisM = GDisM;
 
-	// Setting up RenderManager interface
-	GRenderManager GRM;
-	IRenderManager& RM = GRM;
-
 	// Setting up DataManager interface
 	GDataManager GDatM;
 	IDataManager& DatM = GDatM;
+
+	// Setting up RenderManager interface
+	GRenderManager GRenM(DatM);
+	IRenderManager& RenM = GRenM;
 
 	// Main Loop
 	DisM.initDisplay();
 	DatM.initializeModelTable();
 
-	// Create Base Model and Renderer
-	RM.createBaseRenderer();
+	// Create base model, Base Renderer, and then bind them
+	int renderer = RenM.createBaseRenderer();
 	DatM.createBaseModel();
-
-	// Bind Base Model to Base Renderer
-	DatM.bindModelToRenderer(0, 0);
+	DatM.bindModelToRenderer(0, renderer);
+	DatM.createObject(0, 1);
 
 	while (!DisM.shouldDisplayClose()) {
-		RM.render();
+		// Check if display has resized
+		if (DisM.isWindowSizeUpdate()) {
+			RenM.updatePerspectiveMatrices(DisM.getDisplayWidth(), DisM.getDisplayHeight());
+		}
+
+		RenM.render();
 
 		DisM.updateDisplay();
 		DatM.updateData();
 	}
 
 	DisM.closeDisplay();
-	RM.shutdown();
+	RenM.shutdown();
 
 	return 0;
 }
